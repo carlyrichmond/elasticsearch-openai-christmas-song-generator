@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elastic Chat</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <img
+        class="elastic-logo"
+        src="./public/img/logo-elastic-horizontal-color.svg"/>
+      <h1 aria-label="Elastic Chat">Chat</h1>
+    </header>
+    <main>
+      <div class="container">
+        <p class="subheading">
+          Ask me anything!
+        </p>
+        <input type="text" onchange="getChatAnswer()" placeholder="How do I build a UI that talks to Elasticsearch?">
+        <div class="chat-response-container">
+            <p id="chat-response"></p>
+        </div>
+    </main>
+  </body>
+  <footer>
+    Made by Carly Richmond
+    <span aria-label="avocado" role="img">&#x1f951;</span>
+    with
+    <span aria-label="heart" role="img">&#x1F49C;</span>
+    and
+    <span aria-label="heart" role="img">&#x1f375;</span>
+  </footer>
+</html>

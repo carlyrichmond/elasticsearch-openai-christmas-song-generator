@@ -1,0 +1,27 @@
+{
+  "name": "elasticsearch-openai-chatbot",
+  "version": "1.0.0",
+  "description": "Example ChatBot leveraging Elasticsearch and the OpenAI ChatCompletion API for Daily Elastic Bytes S5 E15",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlyrichmond/elasticsearch-openai-chatbot.git"
+  },
+  "keywords": [
+    "elasticsearch",
+    "openai",
+    "genai"
+  ],
+  "author": "carlyrichmond",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/carlyrichmond/elasticsearch-openai-chatbot/issues"
+  },
+  "homepage": "https://github.com/carlyrichmond/elasticsearch-openai-chatbot#readme",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.10.0"
+  }
+}
