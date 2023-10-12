@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elastic Chat</title>
+    <title>Elastic Hal</title>
     <link rel="stylesheet" href="./index.css" />
     <script src="./index.js" defer></script>
   </head>
@@ -13,14 +13,14 @@
       <img
         class="elastic-logo"
         src="./public/images/logo-elastic-horizontal-color.svg"/>
-      <h1 aria-label="Elastic Chat">Chat</h1>
+      <h1 aria-label="Elastic Chat">Hal</h1>
     </header>
     <main>
       <div class="container">
         <p class="subheading">
-          Ask me anything!
+          I am the H.A.L 9000. You may call me Hal.
         </p>
-        <input type="text" onchange="getChatAnswer()" placeholder="How do I build a UI that talks to Elasticsearch?">
+        <input id="question-input" type="text" onchange="getChatAnswer()" placeholder="Ask me anything about Elastic here!">
         <div class="chat-response-container">
             <p id="chat-response"></p>
         </div>

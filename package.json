@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/carlyrichmond/elasticsearch-openai-chatbot#readme",
   "dependencies": {
-    "@elastic/elasticsearch": "^8.10.0"
+    "@elastic/elasticsearch": "^8.10.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   }
 }
