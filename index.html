@@ -20,7 +20,11 @@
         <p class="subheading">
           I am the H.A.L 9000. You may call me Hal.
         </p>
-        <input id="question-input" type="text" onchange="getChatAnswer()" placeholder="Ask me anything about Elastic here!">
+        <textarea id="question-input" 
+          placeholder="How do I get started with Elasticsearch?"></textarea>
+
+          <button onclick="getChatAnswer()">What's the answer Hal?</button>
+
         <div class="chat-response-container">
             <p id="chat-response"></p>
         </div>

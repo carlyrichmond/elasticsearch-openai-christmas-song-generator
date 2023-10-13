@@ -15,6 +15,7 @@ header {
 
 h1 {
     margin-top: 2rem;
+    font-family: sans-serif; /*TODO change to 80's robot font*/
 }
 
 /*Main section styling*/
@@ -25,8 +26,22 @@ h1 {
     align-items: center;
 }
 
-input {
-    width: 18rem;
+textarea {
+    width: 20rem;
+    height: 10rem;
+    padding: 1rem;
+}
+
+button {
+    margin: 2rem 0 2rem 0;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 8px;
+
+    font-size: larger;
+
+    background-color: #006BB4;
+    color: #FFFFFF;
 }
 
 p#chat-response {

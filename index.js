@@ -1,14 +1,12 @@
 
-
+// How do I embed a Kibana dashboard in my JavaScript application?
 async function getChatAnswer() {
   const question = document.getElementById("question-input").value;
   let answer = "Dave, my mind is going. I can feel it."; // TODO change to be answering document later
 
   try {
-    const response = await fetch('http://localhost:3000/chat', {
-        method: "GET",
-        params: { question: JSON.stringify(question) }
-    });
+    const encodedQuestion = encodeURIComponent(question);
+    const response = await fetch(`http://localhost:3000/chat?question=${encodedQuestion}`);
 
     answer = await response.text();
 
