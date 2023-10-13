@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/chat', (req, res) => {
-    const question = req.params.question;
+    const question = req.query.question;
     res.send(`You asked me ${question}. I can't let you do that Dave.`)
   })
 
