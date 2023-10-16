@@ -25,18 +25,8 @@ app.get("/chat", async (req, res) => {
       const document = response.hits?.hits[0];
 
       if (document) {
-        //const completions = await getChatAnswerFromDocument(decodedQuestion, document._source.solution.text);
-        //solution = completions.choices[0].text;
-        solution = `
-
-        To embed a Kibana dashboard in your JavaScript application, you will need to follow these steps:
-        
-        1. In your Kibana dashboard, go to the Share menu (top right corner) and select Embed this Dashboard.
-        2. Copy the iframe code that is generated.
-        3. In your JavaScript application, create a <iframe> tag and set the src attribute to the copied iframe code.
-        4. Set the xpack.security.sameSiteCookies property in your Kibana configuration file to None.
-        5. Make sure that the browser you are using supports SameSite cookies.
-        6. Reload your JavaScript application and the Kibana dashboard should now be embedded in it.`
+        const completions = await getChatAnswerFromDocument(decodedQuestion, document._source.solution.text);
+        solution = completions.choices[0].text;
       }
     } catch(e) {
       console.log(e);
