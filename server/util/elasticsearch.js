@@ -9,7 +9,7 @@ const client = new elasticsearch.Client({
   auth: { apiKey: apiKey },
 });
 
-async function getTopDocumentForQuestion(question) {
+async function getTopDocumentsForQuestion(question) {
   if (!client) {
     throw new Error("Unable to connect to Elasticsearch")
   }
@@ -31,4 +31,4 @@ async function getTopDocumentForQuestion(question) {
     });
 }
 
-module.exports = { getTopDocumentForQuestion }
+module.exports = { getTopDocumentsForQuestion }

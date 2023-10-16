@@ -3,8 +3,8 @@ const openai = require("openai");
 const apiKey = process.env.OPENAI_API_KEY;
 const client = new openai.OpenAI(apiKey);
 
-  async function getChatAnswerFromDocument(question, document) {
-    const prompt = `Answer this question ${question} using these documents ${document}`;
+  async function getChatAnswerFromDocuments(question, documents) {
+    const prompt = `Answer this question ${question} using these documents ${documents}`;
     return client.chat.completions.create({
         messages: [{ 
             role: "user", 
@@ -14,4 +14,4 @@ const client = new openai.OpenAI(apiKey);
       });
   }
 
-  module.exports = { getChatAnswerFromDocument }
+  module.exports = { getChatAnswerFromDocuments }

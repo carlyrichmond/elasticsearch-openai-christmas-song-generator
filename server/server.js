@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
-const { getTopDocumentForQuestion } = require("./util/elasticsearch");
-const { getChatAnswerFromDocument } = require("./util/openai");
+const { getTopDocumentsForQuestion } = require("./util/elasticsearch");
+const { getChatAnswerFromDocuments } = require("./util/openai");
 
 const app = express();
 app.use(cors());
@@ -21,11 +21,11 @@ app.get("/chat", async (req, res) => {
     const decodedQuestion = decodeURIComponent(question);
 
     try {
-      const response = await getTopDocumentForQuestion(question);
+      const response = await getTopDocumentsForQuestion(question);
       const document = response.hits?.hits[0];
 
       if (document) {
-        const completions = await getChatAnswerFromDocument(decodedQuestion, document._source.solution.text);
+        const completions = await getChatAnswerFromDocuments(decodedQuestion, document._source.solution.text);
         solution = completions.choices[0].message.content;
       }
     } catch(e) {
