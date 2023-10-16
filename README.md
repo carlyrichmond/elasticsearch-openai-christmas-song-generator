@@ -20,6 +20,19 @@ It contains:
 
 ## How to run
 
+### Prerequisites
+
+Initiating the connection between teh Express server and Elasticsearch requires the below environment variables to be defined. These can be defined by exporting environment variables:
+
+```sh
+export ELASTIC_CLOUD_ID=my-elastic-deployment-cloud-id
+export ELASTIC_API_KEY=my-api-key
+```
+
+Alternatively they can be defined by including your own .envrc file at the top of the project if using a tool such as [`direnv`](https://direnv.net/).
+
+### Running
+
 The server, accessible at `http://localhost:3000/`, can be started using the below command:
 
 ```bash
