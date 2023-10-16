@@ -18,7 +18,7 @@ async function getTopDocumentForQuestion(question) {
         fields: ["solution.text"],
         knn: {
             field: "title_vector.predicted_value",
-            k: 1,
+            k: 5,
             num_candidates: 100,
             query_vector_builder: {
               text_embedding: { 

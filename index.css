@@ -58,13 +58,12 @@ p#chat-response {
 
     border-style: outset;
     border-width: 0.15rem;
-    /*border-radius: 8%;*/
     border-color: black;
 
     text-align: center;
     font-family: "Roboto Mono";
 
-    padding: 0 1rem 2.5rem 1rem;
+    padding: 1rem;
 }
 
 

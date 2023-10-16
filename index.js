@@ -3,9 +3,9 @@ async function getChatAnswer() {
   
   // Add loading message
   const responseElement = document.getElementById("chat-response");
-  responseElement.innerText = "\n\nI am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do..."
+  responseElement.innerText = "I am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do..."
 
-  let answer = "\n\nDave, my mind is going. I can feel it."; 
+  let answer = "Dave, my mind is going. I can feel it."; 
 
   try {
     const encodedQuestion = encodeURIComponent(question);

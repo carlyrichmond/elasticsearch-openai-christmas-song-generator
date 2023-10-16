@@ -26,7 +26,7 @@ app.get("/chat", async (req, res) => {
 
       if (document) {
         const completions = await getChatAnswerFromDocument(decodedQuestion, document._source.solution.text);
-        solution = completions.choices[0].text;
+        solution = completions.choices[0].message.content;
       }
     } catch(e) {
       console.log(e);
