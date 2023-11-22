@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const { getTopDocumentsForQuestion } = require("./util/elasticsearch");
-const { getChatAnswerFromDocuments } = require("./util/openai");
+const { getChristmasSongFromDocuments } = require("./util/langchain");
 
 const app = express();
 app.use(cors());
@@ -25,8 +25,7 @@ app.get("/chat", async (req, res) => {
       const document = response.hits?.hits[0];
 
       if (document) {
-        const completions = await getChatAnswerFromDocuments(decodedQuestion, document._source.solution.text);
-        solution = completions.choices[0].message.content;
+        solution = await getChristmasSongFromDocuments(decodedQuestion, document._source.solution.text);
       }
     } catch(e) {
       console.log(e);
