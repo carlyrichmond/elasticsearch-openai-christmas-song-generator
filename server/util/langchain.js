@@ -6,8 +6,8 @@ const llm = new openai.OpenAI({
   temperature: 0.9
 });
 
-  async function getChristmasSongFromLyrics(subject, artist, lyrics) {
-    const prompt = `Write a Christmas song about ${subject} in the style of ${artist} using these song lyrics for inspiration ${lyrics}`;
+  async function getChristmasSongFromLyrics(subject, adjective, food, gift, lyrics) {
+    const prompt = `Write a Christmas song about ${subject}, describing Christmas time as ${adjective} including reference to eating ${food} and receiving a ${gift} in the style of the following song lyrics: ${lyrics}`;
     return llm.predict(prompt);
   }
 

@@ -13,12 +13,15 @@ async function getTopDocumentsForSongTitle(title) {
   if (!client) {
     throw new Error("Unable to connect to Elasticsearch")
   }
-    return client.search({
+
+  const strippedTitle = title.replace("Lyrics", "");
+  
+  return client.search({
         index: index,
         fields: ["song-title", "lyrics"],
         query: {
-          match: {
-            lyrics: title
+          multi_match: {
+            query: strippedTitle
           }
         }
         /*fields: ["solution.text"],

@@ -1,20 +1,26 @@
 async function getSong() {
   const subject = document.getElementById("subject-input").value;
-  const artist = document.getElementById("artist-input").value;
+  const adjective = document.getElementById("adjective-input").value;
+  const food = document.getElementById("food-input").value;
+  const gift = document.getElementById("gift-input").value;
+
   const songTitle = document.getElementById("song-title-input").value;
   
   // Add loading message
   const responseElement = document.getElementById("song-response");
-  responseElement.innerText = "I am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do..."
+  responseElement.innerText = "Generating..."
 
   let answer = "Try again later. Happy Holidays!"; 
 
   try {
     const encodedSubject = encodeURIComponent(subject);
-    const encodedArtist = encodeURIComponent(artist);
+    const encodedAdjective = encodeURIComponent(adjective);
+    const encodedFood = encodeURIComponent(food);
+    const encodedGift = encodeURIComponent(gift);
+
     const encodedSongTitle = encodeURIComponent(songTitle);
 
-    const response = await fetch(`http://localhost:3000/generate?subject=${encodedSubject}&artist=${encodedArtist}&title=${encodedSongTitle}`);
+    const response = await fetch(`http://localhost:3000/generate?subject=${encodedSubject}&adjective=${encodedAdjective}&food=${encodedFood}&gift=${encodedGift}&title=${encodedSongTitle}`);
 
     answer = await response.text();
 
