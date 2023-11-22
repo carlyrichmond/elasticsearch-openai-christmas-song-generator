@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
-const { getTopDocumentsForQuestion } = require("./util/elasticsearch");
-const { getChristmasSongFromDocuments } = require("./util/langchain");
+const { getTopDocumentsForSongTitle } = require("./util/elasticsearch");
+const { getChristmasSongFromLyrics } = require("./util/langchain");
 
 const app = express();
 app.use(cors());
@@ -10,32 +10,36 @@ app.use(cors());
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("I am the H.A.L 9000. You may call me Hal.");
+  res.send("Happy Holidays!");
 });
 
-app.get("/chat", async (req, res) => {
-  const question = req.query.question;
-  let solution;
+app.get("/generate", async (req, res) => {
+  const subject = req.query.subject;
+  const artist = req.query.artist;
+  const songTitle = req.query.title;
+  let song;
 
-  if (question) {
-    const decodedQuestion = decodeURIComponent(question);
+  if (subject && songTitle) {
+    const decodedSubject = decodeURIComponent(subject);
+    const decodedArtist = decodeURIComponent(artist);
+    const decodedSongTitle = decodeURIComponent(songTitle);
 
     try {
-      const response = await getTopDocumentsForQuestion(question);
+      const response = await getTopDocumentsForSongTitle(decodedSongTitle);
       const document = response.hits?.hits[0];
 
       if (document) {
-        solution = await getChristmasSongFromDocuments(decodedQuestion, document._source.solution.text);
+        song = await getChristmasSongFromLyrics(decodedSubject, decodedArtist, document._source.lyrics);
       }
     } catch(e) {
       console.log(e);
-      solution = "I can't let you do that Dave."
+      song = "Do they know it's Christmas time at all?"
     }
   }
 
-  res.send(solution);
+  res.send(song);
 });
 
 app.listen(port, () => {
-  console.log(`Hal is listening on port ${port}`);
+  console.log(`Generating Christmas songs on port ${port}`);
 });

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project contains an example Christmas Song generator leveraging Elasticsearch and Langchain with the OpenAI LLM. This sample forms the basis of the [24th December entry of the 2023 Elastic Advent Calendar](https://discuss.elastic.co/t/dec-24th-2023-en-generating-the-ultimate-christmas-song-with-elasticsearch-and-llms/347313).
+This project contains an example Christmas Song generator leveraging Elasticsearch and LangChain with the OpenAI LLM. This sample forms the basis of the [24th December entry of the 2023 Elastic Advent Calendar](https://discuss.elastic.co/t/dec-24th-2023-en-generating-the-ultimate-christmas-song-with-elasticsearch-and-llms/347313).
 
 <TODO Screenshot>
 
@@ -15,7 +15,7 @@ As shown in the below diagram, this is a simple 3-tier web application:
 It comprises of: 
 
 1. A simple framework independent HTML, JavaScript and CSS UI (`index.html|js|css`). 
-2. Node.js Express server (`server/server.js`) with utilities for communication between Elasticsearch and OpenAI LLM using Langchain.
+2. Node.js Express server (`server/server.js`) with utilities for communication between Elasticsearch and OpenAI LLM using LangChain.
 3. Elasticsearch data store, containing song lyrics from [http://www.christmassongs.net/song-lyrics](http://www.christmassongs.net/song-lyrics).
 
 ## How to run
@@ -24,7 +24,7 @@ It comprises of:
 
 <TO BE UPDATED>
 
-Initiating the connection between the Express server and Elasticsearch requires the below environment variables to be defined, alongside an [API key and account for OpenAI](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) to use with Langchain. These can be defined by exporting environment variables:
+Initiating the connection between the Express server and Elasticsearch requires the below environment variables to be defined, alongside an [API key and account for OpenAI](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) to use with LangChain. These can be defined by exporting environment variables:
 
 ```
 export ELASTIC_CLOUD_ID=my-elastic-deployment-cloud-id

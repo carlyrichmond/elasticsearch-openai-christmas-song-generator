@@ -6,9 +6,9 @@ const llm = new openai.OpenAI({
   temperature: 0.9
 });
 
-  async function getChristmasSongFromDocuments(question, documents) {
-    const prompt = `Answer this question ${question} using these documents ${documents}`;
+  async function getChristmasSongFromLyrics(subject, artist, lyrics) {
+    const prompt = `Write a Christmas song about ${subject} in the style of ${artist} using these song lyrics for inspiration ${lyrics}`;
     return llm.predict(prompt);
   }
 
-  module.exports = { getChristmasSongFromDocuments: getChristmasSongFromDocuments }
+  module.exports = { getChristmasSongFromLyrics: getChristmasSongFromLyrics }

@@ -15,20 +15,30 @@
       <img
         class="elastic-logo"
         src="./public/images/logo-elastic-horizontal-color.svg"/>
-      <h1 aria-label="Elastic Chat">Hal</h1>
+      <h1 aria-label="Christmas Song Generator">Christmas Song Generator</h1>
     </header>
     <main>
       <div class="container">
         <p class="subheading">
-          I am the H.A.L 9000. You may call me Hal.
+          Generate your own Christmas song with Elasticsearch, LangChain and OpenAI!
         </p>
-        <textarea id="question-input" 
-          placeholder="Hal, how do I get started with Elasticsearch?"></textarea>
+        
+        <label for="subject-input">Who or what is your song about?*</label>
+        <input type="text" id="subject-input" 
+          placeholder="Elkie"></input>
+        
+        <label for="artist-input">Which artist is your song in the style of?</label>
+        <input type="text" id="artist-input" 
+          placeholder="Wizzard"></input>
 
-          <button onclick="getChatAnswer()">Help me Hal!</button>
+        <label for="song-title-input">Which Christmas song is your track based on?*</label>
+        <input type="text" id="song-title-input" 
+          placeholder="All I Want for Christmas"></input>
 
-        <div class="chat-response-container">
-            <p id="chat-response"></p>
+        <button onclick="getSong()">Write My Christmas Song!</button>
+
+        <div class="song-response-container">
+            <p id="song-response"></p>
         </div>
     </main>
   </body>
@@ -38,6 +48,6 @@
     with
     <span aria-label="heart" role="img">&#x1F49C;</span>
     and
-    <span aria-label="heart" role="img">&#x1f375;</span>
+    <span aria-label="tea" role="img">&#x1f375;</span>
   </footer>
 </html>
