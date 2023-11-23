@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elastic Hal</title>
+    <title>Elastic Christmas Song Generator</title>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto+Mono">
     <link rel="stylesheet" href="./index.css" />
@@ -23,30 +23,34 @@
           Generate your own Christmas song with Elasticsearch, LangChain and OpenAI!
         </p>
         
-        <label for="subject-input">Who or what is your song about?</label>
-        <input type="text" id="subject-input" 
-          placeholder="Elkie"></input>
-        
-        <label for="adjective-input">Which adjective best describes your Christmas?</label>
-        <input type="text" id="adjective-input" 
-          placeholder="Snowy"></input>
+        <form>
+          <label for="subject-input">Who or what is your song about?</label>
+          <input type="text" id="subject-input" placeholder="Elkie" 
+            minlength="2" required></input>
+          
+          <label for="adjective-input">Which adjective best describes your Christmas?</label>
+          <input type="text" id="adjective-input" placeholder="Snowy" 
+            minlength="2" required></input>
 
-        <label for="food-input">What is your favourite holiday food?</label>
-        <input type="text" id="food-input" 
-          placeholder="Brussel sprouts"></input>
+          <label for="food-input">What is your favourite holiday food?</label>
+          <input type="text" id="food-input" placeholder="Brussel sprouts" 
+            minlength="2" required></input>
 
-        <label for="gift-input">What gift do you want this year?</label>
-        <input type="text" id="gift-input" 
-          placeholder="Elkie socks"></input>
+          <label for="gift-input">What gift do you want this year?</label>
+          <input type="text" id="gift-input" placeholder="Elkie socks" 
+            minlength="2" required></input>
 
-        <label for="song-title-input">Which Christmas song is your track based on?*</label>
-        <input type="text" id="song-title-input" 
-          placeholder="All I Want for Christmas"></input>
+          <label for="song-title-input">Which Christmas song is your track based on?</label>
+          <input type="text" id="song-title-input" placeholder="All I Want for Christmas" 
+            minlength="5" required></input>
 
-        <button onclick="getSong()">Write My Christmas Song!</button>
+          <button onclick="getSong()">Write My Christmas Song!</button>
+        </form>
 
         <div class="song-response-container">
-            <p id="song-response"></p>
+          <img class="holly holly-start" src="./public/images/holly.svg"/>
+          <p id="song-response"></p>
+          <img class="holly holly-end" src="./public/images/holly.svg"/>
         </div>
     </main>
   </body>

@@ -21,6 +21,10 @@ h1 {
     font-family: "Roboto Mono";
 }
 
+label {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /*Main section styling*/
 
 .container {
@@ -29,14 +33,22 @@ h1 {
     align-items: center;
 }
 
-textarea {
-    width: 20rem;
-    height: 10rem;
-    padding: 1rem;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+input {
+    width: 25rem;
+    height: 2rem;
+    border-radius: 5px;
+
+    font-size: 1rem;
 
     border-style: outset;
     border-width: 0.01rem;
-    border-radius: 5%;
     border-color: black;
 }
 
@@ -52,13 +64,36 @@ button {
     color: #FFFFFF;
 }
 
-p#chat-response {
-    min-width: 18rem;
+.song-response-container {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 25rem;
     min-height: 10rem;
 
     border-style: outset;
     border-width: 0.15rem;
     border-color: black;
+    border-radius: 15px;
+}
+
+.holly {
+    width: 5rem;
+    height: auto;
+}
+
+.holly-start {
+    transform: rotate(-45deg);
+}
+
+.holly-end {
+    transform: rotate(135deg);
+    align-self: flex-end;
+}
+
+p#song-response {
+    min-width: 25rem;
+    min-height: 10rem;
 
     text-align: center;
     font-family: "Roboto Mono";
