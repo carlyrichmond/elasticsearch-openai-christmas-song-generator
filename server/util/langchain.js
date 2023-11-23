@@ -8,8 +8,6 @@ const chatModel = new openai.ChatOpenAI({
 });
 
   async function getChristmasSongFromLyrics(subject, adjective, food, gift, lyrics) {
-    //const prompt = `Write a Christmas song about ${subject}, describing Christmas time as ${adjective} including reference to eating ${food} and receiving a ${gift} in the style of the following song lyrics: ${lyrics}`;
-
     const chatPrompts = prompts.ChatPromptTemplate.fromMessages([
       ["system", "You are a Christmas song generator that takes user input and generates a song in the style of the provided song"],
       ["human", "Write a {adjective} Christmas song about {subject}"],
