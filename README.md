@@ -4,13 +4,13 @@
 
 This project contains an example Christmas Song generator leveraging Elasticsearch and LangChain with the OpenAI LLM. This sample forms the basis of the [24th December entry of the 2023 Elastic Advent Calendar](https://discuss.elastic.co/t/dec-24th-2023-en-generating-the-ultimate-christmas-song-with-elasticsearch-and-llms/347313).
 
-<TODO Screenshot>
+![Elastic Christmas Song Generator](./public/images/christmas-song-generator-screenshot.png)
 
 ## Architecture
 
 As shown in the below diagram, this is a simple 3-tier web application:
 
-<TODO architecture>
+![Elastic Christmas Song Generator Architecture](./public/images/song-generator-architecture.png)
 
 It comprises of: 
 
@@ -54,8 +54,3 @@ Check out the relevant resources used in this project:
 3. [ChatGPT and Elasticsearch: OpenAI meets private data | Elasticsearch Labs](https://www.elastic.co/search-labs/chatgpt-elasticsearch-openai-meets-private-data)
 4. [OpenAI Chat Completion API](https://platform.openai.com/docs/api-reference/chat/create)
 5. [Express](https://expressjs.com/)
-
-Additionally, to speed up development when using JavaScript frameworks like React and Angular, check out the below component libraries and utilities referenced in the [Daily Elastic Byte recording](https://www.youtube.com/watch?v=p0KcxhipvbU&list=PL_mJOmq4zsHa6Ii4LArg_r1l08FHleaCl&pp=iAQB):
-
-1. [SearchKit](https://www.searchkit.co/)
-2. [Algolia InstantSearch UI Components](https://www.algolia.com/developers/search-ui/)
