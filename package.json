@@ -25,6 +25,7 @@
     "@elastic/elasticsearch": "^8.10.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "langchain": "^0.0.196"
+    "langchain": "^0.0.196",
+    "path": "^0.12.7"
   }
 }

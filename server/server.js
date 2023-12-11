@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const { getTopDocumentsForSongTitle } = require("./util/elasticsearch");
 const { getChristmasSongFromLyrics } = require("./util/langchain");
@@ -10,7 +11,8 @@ app.use(cors());
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Happy Holidays!");
+  //res.send("Happy Holidays!");
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.get("/generate", async (req, res) => {
@@ -37,6 +39,10 @@ app.get("/generate", async (req, res) => {
 
   res.send(song);
 });
+
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '../')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.listen(port, () => {
   console.log(`Generating Christmas songs on port ${port}`);
