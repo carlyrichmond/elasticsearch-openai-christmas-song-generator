@@ -22,8 +22,6 @@ It comprises of:
 
 ### Prerequisites
 
-<TO BE UPDATED>
-
 Initiating the connection between the Express server and Elasticsearch requires the below environment variables to be defined, alongside an [API key and account for OpenAI](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) to use with LangChain. These can be defined by exporting environment variables:
 
 ```
@@ -43,7 +41,7 @@ npm install
 node server/server.js
 ```
 
-The application can be accessed by opening `index.html` in your browser.
+The application can be accessed by navigating to `http://localhost:3000/` in your preferred browser.
 
 ## Resources
 
