@@ -16,10 +16,10 @@ async function getTopDocumentsForSongTitle(title) {
   
   return client.search({
         index: index,
-        fields: ["song-title", "lyrics"],
         query: {
           multi_match: {
-            query: title
+            query: title,
+            fields: ["song-title", "lyrics"]
           }
         },
         knn: [
